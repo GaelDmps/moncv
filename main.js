@@ -18,9 +18,12 @@ const THEME_KEY = 'cv-theme';
 function applyTheme(theme) {
   rootEl.setAttribute('data-theme', theme);
   if (toggleBtn) {
-    toggleBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
+    const label = theme === 'dark' ? 'Thème clair' : 'Thème sombre';
+    const emoji = theme === 'dark' ? '☀️' : '🌙';
+    toggleBtn.innerHTML = emoji + ' <span class="theme-toggle__label">' + label + '</span>';
     toggleBtn.setAttribute('title', theme === 'dark' ? 'Basculer en mode clair' : 'Basculer en mode sombre');
     toggleBtn.setAttribute('aria-label', toggleBtn.getAttribute('title'));
+    toggleBtn.setAttribute('aria-pressed', theme === 'dark');
   }
 }
 

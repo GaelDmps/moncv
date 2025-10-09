@@ -121,13 +121,21 @@ header{
     color: var(--contrast-text);
     border: 1px solid var(--border);
     border-radius: 999px;
-    padding: .35rem .6rem;
+    padding: .35rem .75rem;
     cursor: pointer;
     box-shadow: 0 6px 16px var(--shadow);
     font-size: .95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
 }
 .theme-toggle:hover{
     opacity: .9;
+}
+/* libellé à côté de l'emoji */
+.theme-toggle__label{
+    font-weight: 600;
+    color: var(--contrast-text);
 }
 #droite{
     margin-left: 2rem;
