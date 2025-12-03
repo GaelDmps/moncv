@@ -86,12 +86,6 @@ header img:hover{
     transform: scale(1.2);
 }
 header{
-    position: static;
-    top: auto;
-    z-index: 50;
-    backdrop-filter: blur(6px);
-    background: color-mix(in srgb, var(--bg) 70%, transparent);
-    box-shadow: 0 1px 0 var(--border);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -264,6 +258,10 @@ footer{
 }
 
 @media (max-width: 768px){
+    /* On laisse de la place en haut pour le bouton de thème en mobile */
+    body{
+        padding-top: 3.5rem;
+    }
     h1{
         font-family: 'Gras';
     }
@@ -308,6 +306,7 @@ footer{
         display: block;
         justify-content: space-between;
         align-items: center;
+        margin-top: 1rem; /* header légèrement plus bas en mobile */
         p{
             text-align: center;
             font-size: 1.5rem;
