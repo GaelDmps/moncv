@@ -44,6 +44,24 @@ if (toggleBtn) {
   toggleBtn.addEventListener('click', toggleTheme);
 }
 
+function calculerAge() {
+  const naissance = new Date(2002, 7, 30); // ⚠️ mois = 7 car janvier = 0
+  const aujourdHui = new Date();
+
+  let age = aujourdHui.getFullYear() - naissance.getFullYear();
+  const anniversairePasse =
+    aujourdHui.getMonth() > naissance.getMonth() ||
+    (aujourdHui.getMonth() === naissance.getMonth() && aujourdHui.getDate() >= naissance.getDate());
+
+  if (!anniversairePasse) {
+    age--;
+  }
+
+  document.getElementById("age").textContent = age;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+
 initTheme();
-
-
+calculerAge();
+})
