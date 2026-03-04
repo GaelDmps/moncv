@@ -46,4 +46,25 @@ if (toggleBtn) {
 
 initTheme();
 
+// Calcul automatique de l'âge
+function calculerAge(dateNaissance) {
+  const aujourdHui = new Date();
+  let age = aujourdHui.getFullYear() - dateNaissance.getFullYear();
+  const mois = aujourdHui.getMonth() - dateNaissance.getMonth();
+  const jour = aujourdHui.getDate() - dateNaissance.getDate();
 
+  if (mois < 0 || (mois === 0 && jour < 0)) {
+    age--;
+  }
+
+  return age;
+}
+
+const dateNaissance = new Date(2002, 7, 30); // 30/08/2002 (mois = 7 car janvier = 0)
+const age = calculerAge(dateNaissance);
+
+const ageLeftEl = document.getElementById('age-left');
+const ageRightEl = document.getElementById('age-right');
+
+if (ageLeftEl) ageLeftEl.textContent = age;
+if (ageRightEl) ageRightEl.textContent = age;
